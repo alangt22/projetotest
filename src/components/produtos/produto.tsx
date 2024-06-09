@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import * as C from "./style";
+import * as C from './style';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBag, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import Cart from '../cart/cart';
@@ -18,12 +18,15 @@ const Produto: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true);
   const [isCartVisible, setIsCartVisible] = useState<boolean>(false);
   const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [prevScrollTop, setPrevScrollTop] = useState<number>(0);
   const [isScrollingDown, setIsScrollingDown] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get<Product[]>('https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=DESC');
+        const response = await axios.get<{ products: Product[] }>(
+          'https://mks-frontend-challenge-04811e8151e6.herokuapp.com/api/v1/products?page=1&rows=8&sortBy=id&orderBy=DESC'
+        );
         setProducts(response.data.products);
         setLoading(false);
       } catch (error) {
@@ -31,15 +34,16 @@ const Produto: React.FC = () => {
         setLoading(false);
       }
     };
-  
+
     fetchProducts();
   }, []);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.pageYOffset;
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      setIsScrollingDown(prevScrollTop => scrollTop > prevScrollTop);
+      setIsScrollingDown(scrollTop > prevScrollTop);
+      setPrevScrollTop(scrollTop);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -47,7 +51,7 @@ const Produto: React.FC = () => {
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [prevScrollTop]);
 
   const adicionarAoCarrinho = (produto: Product) => {
     setCartItems([...cartItems, produto]);
@@ -62,7 +66,7 @@ const Produto: React.FC = () => {
   };
 
   const removerItemDoCarrinho = (id: number) => {
-    const newCartItems = cartItems.filter(item => item.id !== id);
+    const newCartItems = cartItems.filter((item) => item.id !== id);
     setCartItems(newCartItems);
   };
 
@@ -72,18 +76,42 @@ const Produto: React.FC = () => {
 
   return (
     <div>
-      <button style={{ position:'fixed', top: isScrollingDown ? '-50px' : '20px', right: '140px', width: '65px', 
-        height: '35px', fontSize: '15px', display: 'flex', gap: '10px', alignItems: 'center', justifyContent: 'center', 
-        backgroundColor: '#ffffff', border: '1px solid #000000', borderRadius: '5px', padding: '5px', cursor: 'pointer' }}
-         onClick={abrirCarrinho}> 
+      <button
+        style={{
+          position: 'fixed',
+          top: isScrollingDown ? '-50px' : '20px',
+          right: '140px',
+          width: '65px',
+          height: '35px',
+          fontSize: '15px',
+          display: 'flex',
+          gap: '10px',
+          alignItems: 'center',
+          justifyContent: 'center',
+          backgroundColor: '#ffffff',
+          border: '1px solid #000000',
+          borderRadius: '5px',
+          padding: '5px',
+          cursor: 'pointer',
+        }}
+        onClick={abrirCarrinho}
+      >
         <FontAwesomeIcon icon={faShoppingCart} />
         <span>{cartItems.length}</span>
       </button>
 
-      <Cart isVisible={isCartVisible} onClose={fecharCarrinho} cartItems={cartItems} onRemoveItem={removerItemDoCarrinho} />
+      <Cart
+        isVisible={isCartVisible}
+        onClose={fecharCarrinho}
+        cartItems={cartItems}
+        onRemoveItem={removerItemDoCarrinho}
+        onUpdateQuantity={(_id: number, _quantity: number) => {
+          throw new Error('Function not implemented.');
+        }}
+      />
 
       <C.ProductList>
-        {products.map(product => (
+        {products.map((product) => (
           <C.ProductCard key={product.id}>
             <C.ProductImage src={product.photo} alt={product.name} />
             <C.ProductDetails>
