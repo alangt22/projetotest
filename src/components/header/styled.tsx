@@ -8,7 +8,7 @@ export const Header = styled.header`
     justify-content: space-between;
     padding: 0 20px;
 
-    @media screen and (max-width: 830px) {
+    @media screen and (max-width: 600px) {
         flex-direction: column;
         width:589px;
         align-items: center;
