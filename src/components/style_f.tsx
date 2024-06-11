@@ -10,6 +10,6 @@ export const Footer = styled.footer`
     height: 30px;
     gap: 5px;
     @media screen and (max-width: 750px){
-        width: 585px;
+        width: 350px;
     }
 `;

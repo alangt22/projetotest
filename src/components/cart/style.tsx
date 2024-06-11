@@ -18,7 +18,9 @@ export const Container = styled.div<ContainerProps>`
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     @media screen and (max-width: 750px){
-        width: 100%;
+        width: 350px;
+        height: 650px;
+        margin-right:0px ;
         
     }
 
@@ -34,7 +36,9 @@ export const Container = styled.div<ContainerProps>`
                 margin-top: 499px;
                 background-color: #000000;
                 @media screen and (max-width: 750px){
-                    height: 160px;
+                    height: 72px;
+                    margin-top: 408px;
+                    font-size: 20px;
                 }
             }
         
@@ -46,13 +50,18 @@ export const Container = styled.div<ContainerProps>`
         justify-content: space-between;
         margin: 40px;
         margin-top: 499px;
-        margin-bottom: -420px;
+        margin-bottom: -410px;
+        
+
        
     }
     p.total1{
         color: aliceblue;
         font-size: 30px;
         font-weight: bold;
+        @media screen and (max-width: 750px){
+            margin-top:-60px;
+        }
     }
     p.total{
         color: aliceblue;
@@ -61,6 +70,7 @@ export const Container = styled.div<ContainerProps>`
         font-weight: bold;
         @media screen and (max-width: 750px){
             margin-left: 40px;
+            margin-top:-60px;
         }
         
     }
@@ -68,6 +78,8 @@ export const Container = styled.div<ContainerProps>`
     div.titulo{
         width:50%;
         height: 20%;
+        
+        
         
     }
     div.btn{
@@ -80,14 +92,16 @@ export const Container = styled.div<ContainerProps>`
     div.itens{
         width: 500px;
         height: 500px;
-  
         margin-left: 80px;
         align-items: center;
         justify-content: center;
         display: flex;
+        @media screen and (max-width: 750px){
+            margin-top: -70px;
+            height: 420px;
+        }
         ul {
-         
-         
+
             li{
                 width: 600px;
                 height: 150px;
@@ -100,8 +114,9 @@ export const Container = styled.div<ContainerProps>`
                 background-color: white;
                 margin-right: 40px;
                 @media screen and (max-width: 750px){
-                    width: 450px;
-                    margin-left: px;
+                    width: 320px;
+                    margin-right: 350px;
+                    margin-bottom: 10px;
                 }
                 
             }
@@ -109,15 +124,32 @@ export const Container = styled.div<ContainerProps>`
                 width: 150px;
                 height: 150px;
                 border-radius: 50px;
+                @media screen and (max-width: 750px){
+                    width: 130px;
+                }
+
             }
-            p{
+            p.vazio{
                 font-size: 15px;
                 font-weight: bolder;
                 margin-top: 50px;  
                 @media screen and (max-width: 750px){
-                    font-size: 22px;
-                    margin-top: 80px;
+                    font-size:15px;
+                    margin-bottom: 2500px;
                     font-weight: bolder;
+                    margin-right: 380px;
+                }
+
+            }
+            p.preço{
+                font-size: 15px;
+                font-weight: bolder;
+                margin-top: 50px;  
+                @media screen and (max-width: 750px){
+                    font-size:15px;
+                    margin-bottom: 2500px;
+                    font-weight: bolder;
+                    margin-left:-50px;
                 }
                  
             }
@@ -178,6 +210,9 @@ export const Container = styled.div<ContainerProps>`
                 &:hover{
                     background-color: red;
                 }
+                @media screen and (max-width: 750px){
+                    margin-left: -10px;
+                }
                 
             }
             input{
@@ -186,7 +221,7 @@ export const Container = styled.div<ContainerProps>`
                 margin-top: 50px;
                 @media screen and (max-width: 750px){
                     font-size: 20px;
-                    margin-left: 20px;
+                    margin-left: 10px;
                     margin-top: 60px;
                 }
             }
@@ -202,6 +237,9 @@ export const Title = styled.h1`
     margin-left: 50px;
     word-break: break-word;
     color:white;
+    @media screen and (max-width: 750px){
+        font-size: 20px;
+    }
 `;
 
 export const ProductImage = styled.img`
@@ -224,5 +262,10 @@ export const CloseButton = styled.button`
     &:hover {
         background-color: #ff3e1a;
     }
+    @media screen and (max-width: 750px){
+        margin-left: -200px;
+        margin-top:110px;
+    }
+    
 `;
 

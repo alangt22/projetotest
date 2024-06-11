@@ -10,7 +10,7 @@ export const Header = styled.header`
 
     @media screen and (max-width: 750px) {
         flex-direction: column;
-        width:589px;
+        width:350px;
         align-items: center;
         height: auto;
         padding: 10px 0;
@@ -37,7 +37,7 @@ export const Div = styled.div`
         @media screen and (max-width: 750px) {
             margin: 0;
             font-size: 30px;
-            margin-right: 280px;
+            margin-right: 210px;
             margin-top: 10px;
            
         }
@@ -49,8 +49,8 @@ export const Div = styled.div`
         font-size: small;
 
         @media screen and (max-width: 750px) {
-            margin:0;
-            margin-right: 280px;
+            margin-top:-14px;
+            margin-right: 210px;
             
         }
     }

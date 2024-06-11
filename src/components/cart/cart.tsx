@@ -65,12 +65,12 @@ const Cart: React.FC<CartProps> = ({ isVisible, onClose, cartItems, onRemoveItem
                   <input type="number" value={quantities[item.id] || 0} min={0} onChange={e => handleQuantityChange(item.id, parseInt(e.target.value))} />
                   <button className='btn2'  onClick={() => handleQuantityChange(item.id, Math.max(0, (quantities[item.id] || 1) - 1))}>-</button>
                 </div>
-                <p>R${item.price}</p>
+                <p className='preço'>R${item.price}</p>
                 <button onClick={() => onRemoveItem(item.id)}>X</button>
               </li>
             ))
           ) : (
-            <p>O carrinho está vazio.</p>
+            <p className='vazio'>O carrinho está vazio.</p>
           )}
         </ul>
       </div>

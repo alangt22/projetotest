@@ -76,11 +76,12 @@ const Produto: React.FC = () => {
 
   return (
     <div>
-      <button
+      <button className='btn'
         style={{
+    
           position: 'fixed',
           top: isScrollingDown ? '-50px' : '20px',
-          right: '140px',
+          right: '40px',
           width: '65px',
           height: '35px',
           fontSize: '15px',
@@ -92,7 +93,7 @@ const Produto: React.FC = () => {
           border: '1px solid #000000',
           borderRadius: '5px',
           padding: '5px',
-          cursor: 'pointer',
+          cursor: 'pointer',          
         }}
         onClick={abrirCarrinho}
       >
