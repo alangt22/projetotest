@@ -18,7 +18,7 @@ export const ProductList = styled.div`
     grid-template-columns: repeat(2, 4fr);
     margin-left: 140px;
     width: 50px;
-    margin-left: 190px;
+    margin-left: 185px;
 
   }
   

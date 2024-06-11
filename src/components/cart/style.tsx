@@ -116,7 +116,7 @@ export const Container = styled.div<ContainerProps>`
                 margin-right: 40px;
                 @media screen and (max-width: 750px){
                     width: 320px;
-                    margin-right: 350px;
+                    margin-right: 305px;
                     margin-bottom: 10px;
                 }
                 
