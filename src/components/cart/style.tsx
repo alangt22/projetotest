@@ -18,9 +18,10 @@ export const Container = styled.div<ContainerProps>`
     border-radius: 8px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     @media screen and (max-width: 750px){
-        width: 350px;
+        width: 410px;
         height: 650px;
         margin-right:0px ;
+        margin-right: 5px;
         
     }
 
@@ -135,9 +136,9 @@ export const Container = styled.div<ContainerProps>`
                 margin-top: 50px;  
                 @media screen and (max-width: 750px){
                     font-size:15px;
-                    margin-bottom: 2500px;
+                    
                     font-weight: bolder;
-                    margin-right: 380px;
+                    margin-right: 310px;
                 }
 
             }
@@ -263,7 +264,7 @@ export const CloseButton = styled.button`
         background-color: #ff3e1a;
     }
     @media screen and (max-width: 750px){
-        margin-left: -200px;
+        margin-left: -140px;
         margin-top:110px;
     }
     

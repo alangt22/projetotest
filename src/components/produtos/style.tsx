@@ -18,7 +18,7 @@ export const ProductList = styled.div`
     grid-template-columns: repeat(2, 4fr);
     margin-left: 140px;
     width: 50px;
-    margin-left: 150px;
+    margin-left: 190px;
 
   }
   
@@ -35,7 +35,7 @@ export const ProductCard = styled.div`
   flex-direction: column;
   height: 90%;
   @media screen and (max-width: 750px){
-    width: 116px;
+    width: 150px;
   }
 `;
 
