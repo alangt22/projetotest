@@ -155,6 +155,10 @@ export const Container = styled.div<ContainerProps>`
                  
             }
             p.name{
+                font-size: 18px;
+                font-weight: bold;
+                margin-top: 55px;
+                
                 @media screen and (max-width: 750px){
                     display: none;
                 }                    
