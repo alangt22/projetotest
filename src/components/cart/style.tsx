@@ -8,7 +8,7 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
     display: ${props => props.isVisible ? 'block' : 'none'};
     background-color: blue;
-    width: 34%;
+    width: 43%;
     height: 100%;
     position: fixed; 
     top: 0; 
@@ -31,10 +31,10 @@ export const Container = styled.div<ContainerProps>`
 
     button.comprar{
                 width: 100%;
-                height: 139px;
-                font-size: 50px;
+                height: 5%;
+                font-size: 25px;
                 color: white;
-                margin-top: 499px;
+                margin-top: 460px;
                 background-color: #000000;
                 @media screen and (max-width: 750px){
                     height: 72px;

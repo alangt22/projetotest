@@ -53,7 +53,7 @@ const Cart: React.FC<CartProps> = ({ isVisible, onClose, cartItems, onRemoveItem
         Comprar
       </button>
 
-      <div className='itens' style={{ position: 'absolute', top: 220, bottom: 0, left:-130, right: 0, overflowY: 'hidden', width:'800px' }}>
+      <div className='itens' style={{ position: 'absolute', top: 120, bottom: 0, left:-130, right: 0, overflowY: 'hidden', width:'800px' }}>
         <ul style={{ maxHeight: 'calc(100% - 100px)', overflowX:'hidden'}}>
           {cartItems && cartItems.length > 0 ? (
             cartItems.map(item => (

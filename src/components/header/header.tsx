@@ -11,7 +11,7 @@ const Header = () => {
     return(
         <C.Header>
             <C.Div>
-                <h1>MKS</h1>
+                <h1>ALN</h1>
                 <h4>Sistemas</h4>
             </C.Div>
             

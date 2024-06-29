@@ -6,7 +6,7 @@ const Footer = () => {
     return(
         <C.Footer>
             <p>
-                MKS Sistemas
+                ALN Sistemas
             </p>
             <FontAwesomeIcon icon={faCopyright} />
             <p>
